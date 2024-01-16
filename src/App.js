@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar1 from './Navbar1';
+import Home from './Home';
 
 function App() {
+  const link = "https://github.com/Hedy21";
+  //numbers array string fine BUT
+  //boolean နဲ့ object ပဲ output အနေနဲ့ထုတ်လို့ မရတာ
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar1 />
+      <div className="content">
+        <Home/>
+
+        <a href={ link }>Check My GitHub Account</a>
+      </div>
     </div>
   );
 }
