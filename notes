@@ -1,0 +1,8 @@
+sfc = stateless function component
+props = js တစ်ခုက‌ variable pass ပေးတဲ့ ပုံစံ | laravel မှာဆို compact သဘောမျိုး
+    Home.js မှာဆို 
+    <BlogList blogs={blogs} title="All Blogs"/>
+    BlogList.js မှာဆို
+    xonst BlogList = (props) => {
+    const blogs = props.blogs;
+    } ဆိုပီး parameter ကနေယူ

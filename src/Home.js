@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlogList from "./BlogList";
 // flutter မှာဆို stateful ဖြစ်အောင်လုပ်သလိုပဲ
 
 const Home = () => {
@@ -36,12 +37,14 @@ const Home = () => {
                 handleClick2('Mario',e)
             }}>Click me Again</button>
             
-    {blogs.map((b)=>(
+    {/* {blogs.map((b)=>(
         <div className="blog-preview" key={b.id}>
             <h2>{b.title}</h2>
             Written by {b.author}
         </div>
-    ))}
+    ))} */}
+
+    <BlogList blogs={blogs} title="All Blogs"/>
         </div>
      );
 }
