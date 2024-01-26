@@ -6,3 +6,23 @@ props = js တစ်ခုက‌ variable pass ပေးတဲ့ ပုံစ�
     xonst BlogList = (props) => {
     const blogs = props.blogs;
     } ဆိုပီး parameter ကနေယူ
+
+12. Reusing Components
+-အပေါ်က array ကို filter စစ်ပီး ပို့တာ
+-BlogList ကိုပဲ နှစ်ခါသုံးသွားတာ
+<BlogList blogs={blogs.filter((blog)=>blog.author === 'mario')} title="Mario's Blogs"/>
+
+13. Functions as props // function ကို props 
+-state ကိုupdate လုပ် | array ပို filter လုပ်ပီးပဲ ပြ original array still remains
+-ခုက blog မှာ delete ခလုတ် နှိပ်လိုက်ရင် ပျက်သွားတဲ ပုံပြ
+Home.js မှာ
+const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog=>blog.id !== id);
+        //delete button ကနေ ပါလာတဲ့ id ကိုဖယ်ပီး array အသစ်ဆောက်
+        setBlogs(newBlogs);
+        //setBlogs ဆိုပီး array အသစ်ကိုထည့်ပေးလိုက်တာ
+    }
+<BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
+BlogList.js
+const handleDelete = props.handleDelete;
+<button onClick={() => handleDelete(b.id)}>delete blog</button>

@@ -24,9 +24,15 @@ const Home = () => {
         console.log('hello '+name);
         console.log(e.target);
     }
+    // မူရင်း array ကို ပြောင်းမသွားစေပဲ filter လုပ်ပီး အသစ်ပြတဲ့ ပုံစ
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog=>blog.id !== id);
+        //delete button ကနေ ပါလာတဲ့ id ကိုဖယ်ပီး array အသစ်ဆောက်
+        setBlogs(newBlogs);
+        //setBlogs ဆိုပီး array အသစ်ကိုထည့်ပေးလိုက်တာ
+    }
 
-    return (
-        
+    return (       
         <div className="home">
             <h2>Home Page</h2>
             <p>{ name } is { age } years old.</p>
@@ -44,7 +50,8 @@ const Home = () => {
         </div>
     ))} */}
 
-    <BlogList blogs={blogs} title="All Blogs"/>
+    <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
+    <BlogList blogs={blogs.filter((blog)=>blog.author === 'mario')} title="Mario's Blogs" handleDelete={handleDelete}/>
         </div>
      );
 }
